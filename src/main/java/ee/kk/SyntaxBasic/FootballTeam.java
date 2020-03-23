@@ -1,5 +1,7 @@
 package ee.kk.SyntaxBasic;
 
+import java.util.Calendar;
+
 public class FootballTeam {
     /*  Static - also known as class variable. Used for defining common property, like company for employees of school
      *  for students. Here we use to define football league name
@@ -38,7 +40,20 @@ public class FootballTeam {
         return FoundationYear;
     }
 
+    // Using void means that method is not returning anything
     public void setFoundationYear(Integer foundationYear) {
         FoundationYear = foundationYear;
+    }
+
+    /**
+     * Method to compute club age.
+     * @return - footballclub age
+     */
+
+    public int computeAndPrintAge(){
+        // Get current year
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        int clubAge = year - getFoundationYear();
+        return clubAge;
     }
 }
