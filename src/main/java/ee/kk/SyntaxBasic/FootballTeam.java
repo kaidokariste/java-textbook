@@ -2,22 +2,33 @@ package ee.kk.SyntaxBasic;
 
 import java.util.Calendar;
 
-public class FootballTeam {
+/**
+ * Abstract - A class that does not need to be instantiated, but groups together fields and methods
+ * for other classes to inherit, or provide a concrete implementation for
+ */
+public abstract class FootballTeam {
     /*  Static - also known as class variable. Used for defining common property, like company for employees of school
      *  for students. Here we use to define football league name
      *  Final - if variable is final, you can not change it afterwards. It will be constant
      *  private - variable is accessible only inside it's own class
      */
 
-    static final String LEAGUE = "Premium liiga";
+    public static final String ASSOCIATION = "UEFA";
     private String TeamName;
     private String HeadCoach;
     private Integer FoundationYear;
 
     /* Good principle in Java is encapsulation - use special methods to access and change class variables */
 
-    public static String getLEAGUE() {
-        return LEAGUE;
+    /* Constructor for footballteam */
+    public FootballTeam(String TeamName, String HeadCoach, Integer FoundationYear){
+        this.TeamName = TeamName;
+        this.HeadCoach = HeadCoach;
+        this.FoundationYear = FoundationYear;
+    }
+
+    public static String getASSOCIATION() {
+        return ASSOCIATION;
     }
 
     public String getTeamName() {
@@ -50,10 +61,5 @@ public class FootballTeam {
      * @return - footballclub age
      */
 
-    public int computeAndPrintAge(){
-        // Get current year
-        int year = Calendar.getInstance().get(Calendar.YEAR);
-        int clubAge = year - getFoundationYear();
-        return clubAge;
-    }
+    public abstract int computeAndPrintAge();
 }

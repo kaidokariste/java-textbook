@@ -1,15 +1,16 @@
 package ee.kk.SyntaxBasic;
 
 public class CreateFootballClub {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         // Initaiate new football team called Flora
-        FootballTeam Flora = new FootballTeam();
+        EstoniaFootballTeam Flora = new EstoniaFootballTeam(
+                "FC Flora",
+                "Jürgen Henn",
+                1990,
+                "Estonia", 
+                "Premium liiga");
 
-        // Set team info trough set and get methods
-        Flora.setTeamName("FC Flora");
-        Flora.setHeadCoach("Jürgen Henn");
-        Flora.setFoundationYear(1990);
-        System.out.println("Team name:" + Flora.getTeamName() + "Head coach: "+ Flora.getHeadCoach());
+        System.out.println("Team name:" + Flora.getTeamName() + "Head coach: " + Flora.getHeadCoach());
 
         // Using Method in FootballTeam class to get team age
         int HowOldIsFlora = Flora.computeAndPrintAge();
