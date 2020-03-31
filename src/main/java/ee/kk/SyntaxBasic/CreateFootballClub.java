@@ -1,8 +1,9 @@
 package ee.kk.SyntaxBasic;
 
-public class CreateFootballClub {
+public class CreateFootballClub extends Object{
     public static void main(String[] args) {
-        // Initaiate new football team called Flora
+
+        // Initiate new football team called Flora
         EstoniaFootballTeam Flora = new EstoniaFootballTeam(
                 "FC Flora",
                 "Jürgen Henn",
@@ -19,5 +20,8 @@ public class CreateFootballClub {
         // Set a stadium for football team
         Stadium stadium = new Stadium("Le Coq Arena", 14405, 2001);
         System.out.println("Floar is playing in: " + stadium.getStadiumName() + " , that can hold " + stadium.getCapacity() + " persons");
+
+        // Accessing to Enum Value
+        System.out.println(FootballPositions.DEFENDER.getShortForm());
     }
 }
