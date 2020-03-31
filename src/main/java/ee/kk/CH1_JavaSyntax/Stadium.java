@@ -1,4 +1,4 @@
-package ee.kk.SyntaxBasic;
+package ee.kk.CH1_JavaSyntax;
 
 public class Stadium {
 

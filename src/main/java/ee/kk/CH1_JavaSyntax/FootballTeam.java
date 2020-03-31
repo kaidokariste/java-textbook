@@ -1,6 +1,4 @@
-package ee.kk.SyntaxBasic;
-
-import java.util.Calendar;
+package ee.kk.CH1_JavaSyntax;
 
 /**
  * Abstract - A class that does not need to be instantiated, but groups together fields and methods
@@ -20,7 +18,7 @@ public abstract class FootballTeam {
 
     /* Good principle in Java is encapsulation - use special methods to access and change class variables */
 
-    /* Constructor for footballteam */
+    // Constructor for footballteam  - shorter form if you don't want to use getters (accessors) or setters(mutators)
     public FootballTeam(String TeamName, String HeadCoach, Integer FoundationYear){
         this.TeamName = TeamName;
         this.HeadCoach = HeadCoach;
@@ -61,5 +59,5 @@ public abstract class FootballTeam {
      * @return - footballclub age
      */
 
-    public abstract int computeAndPrintAge();
+    public abstract int computeAndPrintAge() throws NegativeAgeException;
 }

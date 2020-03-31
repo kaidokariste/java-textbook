@@ -1,4 +1,4 @@
-package ee.kk.SyntaxBasic;
+package ee.kk.CH1_JavaSyntax;
 
 /**
  * Example of using enum class

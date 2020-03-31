@@ -1,11 +1,12 @@
-package ee.kk.SyntaxBasic;
+package ee.kk.CH1_JavaSyntax;
 
-public class CreateFootballClub extends Object{
-    public static void main(String[] args) {
+public class CreateFootballClub {
+    public static void main(String[] args) throws NegativeAgeException {
 
-        // Initiate new football team called Flora
+        // The operation through which instances are created is called instantiation
+        // Instantiate new football team called Flora
         EstoniaFootballTeam Flora = new EstoniaFootballTeam(
-                "FC Flora",
+                "Flora",
                 "Jürgen Henn",
                 1990,
                 "Estonia", 
@@ -18,7 +19,7 @@ public class CreateFootballClub extends Object{
         System.out.println("Club age is: " + HowOldIsFlora);
 
         // Set a stadium for football team
-        Stadium stadium = new Stadium("Le Coq Arena", 14405, 2001);
+        Stadium stadium = new Stadium("A. Le Coq Arena", 14405, 2001);
         System.out.println("Floar is playing in: " + stadium.getStadiumName() + " , that can hold " + stadium.getCapacity() + " persons");
 
         // Accessing to Enum Value

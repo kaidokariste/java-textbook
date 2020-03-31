@@ -1,4 +1,4 @@
-package ee.kk.ApiCalls;
+package ee.kk.CH5_ApiCalls;
 
 import java.io.IOException;
 import java.net.URI;

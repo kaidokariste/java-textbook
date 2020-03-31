@@ -1,4 +1,4 @@
-package ee.kk.PostgreSql;
+package ee.kk.CH7_PostgreSql;
 
 import java.sql.*;
 

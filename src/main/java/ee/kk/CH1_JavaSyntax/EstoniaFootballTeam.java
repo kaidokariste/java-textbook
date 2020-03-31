@@ -1,8 +1,11 @@
-package ee.kk.SyntaxBasic;
+package ee.kk.CH1_JavaSyntax;
 
 import java.util.Calendar;
 import java.util.List;
 
+/**
+ * Child class of parent class FootballTeam
+ */
 public class EstoniaFootballTeam extends FootballTeam {
 
     private String country;
@@ -22,9 +25,14 @@ public class EstoniaFootballTeam extends FootballTeam {
     }
 
     @Override
-    public int computeAndPrintAge() {
+    public int computeAndPrintAge() throws NegativeAgeException {
         // Get current year
         int year = Calendar.getInstance().get(Calendar.YEAR);
+
+        // Test if club age will be more than 0, else throw NegativeAgeException
+        if (year - getFoundationYear() <0){
+            throw new NegativeAgeException("Club age can not be negative");
+        }
         return year - getFoundationYear();
     }
 }
