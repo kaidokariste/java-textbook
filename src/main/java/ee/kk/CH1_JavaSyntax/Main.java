@@ -1,6 +1,6 @@
 package ee.kk.CH1_JavaSyntax;
 
-public class CreateFootballClub {
+public class Main {
     public static void main(String[] args) throws NegativeAgeException {
 
         // The operation through which instances are created is called instantiation
