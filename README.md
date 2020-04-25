@@ -16,4 +16,5 @@ args[0], args[1].
 5. For connection, I have created separate class
 
 # Spring Framework
-1. [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+1. [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/) - setting up hello-world endpoint. Can be run using ```> mvn spring-boot:run``` 
+
