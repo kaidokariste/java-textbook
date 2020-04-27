@@ -28,8 +28,8 @@ STEP 3 PostgreSql baasiga ühendamine ja fetchAll endpointi tegemine. Peamise te
   3.3 [Configuring Spring Boot for PostgreSQL](https://dzone.com/articles/configuring-spring-boot-for-postgresql) - siit sai puudujääva Postgresi confi osa, mis kahest eelmisest vajaka jäi  
 Kasulik käsk ```mvn clean spring-boot:run``` või ```mvn clean spring-boot:run -X```  
 
-STEP 4. POST endpoint. Otseselt häid viiteid ei oskagi anda. Lõpuks kasutasin kuidagi .save() meetodit, aga kokku läks selle ühe endpointi uurimine 5 tundi ja siis sain ka alles esialgse variandi toimima. Sisuliselt oli vaja lisada Controllerisse paar rida koodi juurde. Enamus näited implementeerisid kohe save meetodi läbi repository, aga kuna mul oli see Service package ka hindu projektist vahel, pidin läbi selle tegema.
+STEP 4. POST endpoint. Otseselt häid viiteid ei oskagi anda. Lõpuks kasutasin kuidagi .save() meetodit. Hindu projektis oli ka DAO packages veel tehtud asju, aga mul lõpuks ei läinudki vaja. Kokku läks selle ühe endpointi uurimine 5 tundi ja siis sain ka alles esialgse variandi toimima. Sisuliselt oli vaja lisada Controllerisse paar rida koodi juurde. Enamus näited implementeerisid kohe save meetodi läbi repository, aga kuna mul oli see Service package ka hindu projektist vahel, pidin läbi selle tegema.
 
-Tükk tegu oli ka sellega, et ei peaks etteantavasse JSON-isse id-d lisama. Selle muudatuse tuli läbi annotatsioonide lõpuks model failis sisse viia.  Kokku läks umbes 5h
+Tükk tegu oli ka sellega, et ei peaks etteantavasse JSON-isse id-d lisama. Selle muudatuse tuli läbi annotatsioonide lõpuks model failis sisse viia.  
 
 *KOKKU: 8h 46 min* 
