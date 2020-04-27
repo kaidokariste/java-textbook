@@ -16,6 +16,9 @@ args[0], args[1].
 5. For connection, I have created separate class
 
 # Spring Framework
+### spring-API-postgres
+Eesmärk oli genereerida lihtne "Hello World" endpoint, lisada juurde võimalus läbi Swaggeri API requeste teha, ühendada see ära siis PostgreSQl baasiga ja genereerida GET all ja POST enpointid
+
 STEP 1. [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/) - setting up hello-world endpoint. Can be run using ```> mvn spring-boot:run```  
 STEP 2. [Spring Boot + Swagger2](https://www.javainuse.com/spring/boot_swagger) - adding Swagger documentation manager to your Api
 
@@ -25,4 +28,8 @@ STEP 3 PostgreSql baasiga ühendamine ja fetchAll endpointi tegemine. Peamise te
   3.3 [Configuring Spring Boot for PostgreSQL](https://dzone.com/articles/configuring-spring-boot-for-postgresql) - siit sai puudujääva Postgresi confi osa, mis kahest eelmisest vajaka jäi  
 Kasulik käsk ```mvn clean spring-boot:run``` või ```mvn clean spring-boot:run -X```  
 
-*KOKKU: 3h 46 min* 
+STEP 4. POST endpoint. Otseselt häid viiteid ei oskagi anda. Lõpuks kasutasin kuidagi .save() meetodit, aga kokku läks selle ühe endpointi uurimine 5 tundi ja siis sain ka alles esialgse variandi toimima. Sisuliselt oli vaja lisada Controllerisse paar rida koodi juurde. Enamus näited implementeerisid kohe save meetodi läbi repository, aga kuna mul oli see Service package ka hindu projektist vahel, pidin läbi selle tegema.
+
+Tükk tegu oli ka sellega, et ei peaks etteantavasse JSON-isse id-d lisama. Selle muudatuse tuli läbi annotatsioonide lõpuks model failis sisse viia.  Kokku läks umbes 5h
+
+*KOKKU: 8h 46 min* 
