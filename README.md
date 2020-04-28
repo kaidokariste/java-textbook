@@ -1,5 +1,7 @@
 # java-textbook
-Basic functionality for Java development
+## Definitions
+**ORM** (Object-Relational Mapping)
+**POM** (Project Object Model) - Maveni projekti ja dependency fail
 
 ## Using Gradle to run whole project
 In project root folder (where are _build.gradle_ and _settings.gradle_ files)  
