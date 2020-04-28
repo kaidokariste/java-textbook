@@ -46,3 +46,6 @@ Proovisin ka saata sõnumit  Fleepi nimelisse rakendusse läbi webhooki. Kuna Gs
 [Jackson 2 – Convert Java Object to / from JSON](https://mkyong.com/java/jackson-2-convert-java-object-to-from-json/) - kuidas java objektist json String teha
 
 *KOKKU: 2h 40 min* 
+
+# Ideid läbivaatamiseks
+https://www.concretepage.com/spring-boot/spring-boot-rest-example
