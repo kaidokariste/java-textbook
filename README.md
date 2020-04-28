@@ -1,6 +1,6 @@
 # java-textbook
 ## Definitions
-**ORM** (Object-Relational Mapping)
+**ORM** (Object-Relational Mapping)  
 **POM** (Project Object Model) - Maveni projekti ja dependency fail
 
 ## Using Gradle to run whole project
@@ -35,3 +35,13 @@ STEP 4. POST endpoint. Otseselt häid viiteid ei oskagi anda. Lõpuks kasutasin 
 Tükk tegu oli ka sellega, et ei peaks etteantavasse JSON-isse id-d lisama. Selle muudatuse tuli läbi annotatsioonide lõpuks model failis sisse viia.  
 
 *KOKKU: 8h 46 min* 
+
+### spring-consuming-rest
+Alustuseks paned üles teenuse, mis võtab Springi tsitaatide endpointiga ühendust. Selle jaoks, et ta konsooli logiks, pidi mingeid trikke tegema Loggeriga main klassi alt. Arusaamatuks jäi, et kui tahaks seda teadet kuhugi salvestada ja edasi saata, kuidas see siis toimuks.
+
+Tükk aega rähklesin, et kuidagi tsitaati kätte saada Value klassist. Lõpuks kasutasin ikkagi @Overide toString funktsiooni.
+Proovisin ka saata sõnumit  Fleepi nimelisse rakendusse läbi webhooki. Kuna Gsonit veel kasutanud pole, siis võtsin oma enda näitest ja kasutasin http libary HTTP Requesti.  
+
+[Consuming a RESTful Web Service](https://spring.io/guides/gs/consuming-rest/) - õpetus, kuidas Spring frameworkiga consumida API endpointe  
+[Jackson 2 – Convert Java Object to / from JSON](https://mkyong.com/java/jackson-2-convert-java-object-to-from-json/) - kuidas java objektist json String teha
+
