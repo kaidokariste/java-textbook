@@ -45,3 +45,4 @@ Proovisin ka saata sõnumit  Fleepi nimelisse rakendusse läbi webhooki. Kuna Gs
 [Consuming a RESTful Web Service](https://spring.io/guides/gs/consuming-rest/) - õpetus, kuidas Spring frameworkiga consumida API endpointe  
 [Jackson 2 – Convert Java Object to / from JSON](https://mkyong.com/java/jackson-2-convert-java-object-to-from-json/) - kuidas java objektist json String teha
 
+*KOKKU: 2h 40 min* 
