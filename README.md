@@ -48,4 +48,5 @@ Proovisin ka saata sõnumit  Fleepi nimelisse rakendusse läbi webhooki. Kuna Gs
 *KOKKU: 2h 40 min* 
 
 # Ideid läbivaatamiseks
-https://www.concretepage.com/spring-boot/spring-boot-rest-example
+https://www.concretepage.com/spring-boot/spring-boot-rest-example  
+https://howtodoinjava.com/spring-boot2/rest/rest-api-example/
