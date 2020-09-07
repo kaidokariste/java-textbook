@@ -1,0 +1,32 @@
+{
+    "_id": {
+        "$oid": "5bfbedba3262d7327c1849b9"
+    },
+    "address": {
+        "city": "Tartu",
+        "county": "Tartu maakond",
+        "district": "Ränilinn",
+        "street": "Kaubanduse",
+        "houseNumber": "50",
+        "houseType": "Apartment building"
+    },
+    "paymentDate": {
+        "year": "2015",
+        "month": "July",
+        "season": "Summer"
+    },
+	"otherFees":[{"telefon": 17.00, "internet": 24.00}],
+    "paymentDetails": {
+        "centralHeating": 8.59,
+        "waterHeating": 14.4,
+        "waterConsumption": 16.22,
+        "gas": 0.52,
+        "garbageCollection": 2.88,
+        "overallElectricity": [{"night": 5.0},{"day": 2.99}],
+        "renovationFund": 31.48,
+        "administrationFee": 10.5,
+        "insurance": 2.3,
+        "janitor": 5.09,
+        "total": 103.03
+    }
+}
