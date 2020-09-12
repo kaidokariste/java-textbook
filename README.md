@@ -45,7 +45,11 @@ Proovisin ka saata sõnumit  Fleepi nimelisse rakendusse läbi webhooki. Kuna Gs
 [Consuming a RESTful Web Service](https://spring.io/guides/gs/consuming-rest/) - õpetus, kuidas Spring frameworkiga consumida API endpointe  
 [Jackson 2 – Convert Java Object to / from JSON](https://mkyong.com/java/jackson-2-convert-java-object-to-from-json/) - kuidas java objektist json String teha
 
-*KOKKU: 2h 40 min* 
+*KOKKU: 2h 40 min*
+
+#Fantasy premierleague projekt
+api - https://fantasy.premierleague.com/api/bootstrap-static/
+ideas https://towardsdatascience.com/fantasy-premier-league-value-analysis-python-tutorial-using-the-fpl-api-8031edfe9910
 
 # Ideid läbivaatamiseks
 https://www.concretepage.com/spring-boot/spring-boot-rest-example  
