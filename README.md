@@ -48,8 +48,8 @@ Proovisin ka saata sõnumit  Fleepi nimelisse rakendusse läbi webhooki. Kuna Gs
 *KOKKU: 2h 40 min*
 
 #Fantasy premierleague projekt
-api - https://fantasy.premierleague.com/api/bootstrap-static/
-ideas https://towardsdatascience.com/fantasy-premier-league-value-analysis-python-tutorial-using-the-fpl-api-8031edfe9910
+api - https://fantasy.premierleague.com/api/bootstrap-static/  
+ideas https://towardsdatascience.com/fantasy-premier-league-value-analysis-python-tutorial-using-the-fpl-api-8031edfe9910  
 
 # Ideid läbivaatamiseks
 https://www.concretepage.com/spring-boot/spring-boot-rest-example  
