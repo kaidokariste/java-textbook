@@ -17,16 +17,14 @@ public class Main {
                 JsonObject player = pa.getAsJsonObject();
                 String firstName = player.get("first_name").getAsString();
                 String secondName = player.get("second_name").getAsString();
-                System.out.println(firstName+" "+secondName);
+                String fullName = secondName + "," + firstName;
+                Double gameForm = player.get("form").getAsDouble();
+                Integer cost = player.get("now_cost").getAsInt();
+                System.out.println(fullName + " Form: " + gameForm + " Cost: " + cost);
             }
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
-
-
     }
-
 }
