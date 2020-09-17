@@ -1,5 +1,8 @@
 package week2;
 
+import edu.duke.FileResource;
+import edu.duke.StorageResource;
+
 public class DnaFinder {
 
     public Integer findStopCodon(String dna, int startIndex, String stopCodon){
@@ -26,7 +29,7 @@ public class DnaFinder {
         int endCodonTgaIndex = findStopCodon(dna,startCodonIndex,"TGA");
         int closestStop = Math.min(Math.min(endCodonTaaIndex,endCodonTagIndex),endCodonTgaIndex);
         int dnaLength = dna.length();
-        System.out.println("ATG: "+ startCodonIndex+" TAA: "+endCodonTaaIndex+" TAG: "+endCodonTagIndex+" TGA: "+endCodonTgaIndex);
+        //System.out.println("ATG: "+ startCodonIndex+" TAA: "+endCodonTaaIndex+" TAG: "+endCodonTagIndex+" TGA: "+endCodonTgaIndex);
         if (closestStop == dnaLength){
             return "";
         } else {
@@ -34,19 +37,25 @@ public class DnaFinder {
         }
     }
 
-    public void printAllGenes(String dna){
+    // All genes method
+    public StorageResource getAllGenes(String dna){
+        //create an empty sorage resource
+        StorageResource geneList = new StorageResource();
+        //
         int startIndex = 0;
         while(true){
             String currentGene = findGene(dna, startIndex);
             if (currentGene.isEmpty()){
                 break;
             }
-            System.out.println(currentGene);
+            // Add the gene to gene list
+            geneList.add(currentGene);
             startIndex = dna.indexOf(currentGene, startIndex) + currentGene.length();
         }
+        return geneList;
     }
 
-    public void howMany(String strA, String strB ){
+    public int howMany(String strA, String strB ){
         int startIndex = 0;
         int lenA = strA.length();
         int counter = 0;
@@ -54,38 +63,79 @@ public class DnaFinder {
         while(true){
 
             startIndex = strB.indexOf(strA,startIndex);
-            System.out.println(startIndex);
+            //System.out.println(startIndex);
             if (startIndex == -1){
                 break;
             }
             counter = counter +1;
             startIndex = startIndex + lenA;
         }
-        System.out.println(counter);
+        return counter;
+    }
+
+    public double cgRatio(String dna){
+        int dnaLength = dna.length();
+        int countG = howMany("G",dna);
+        int countC = howMany("C",dna);
+        //System.out.println("Kokku G-sid: "+countG);
+        //System.out.println("Kokku C-sid: "+countC);
+        //System.out.println("Suhtarv: " + ((double)(countC+countG)/dnaLength));
+        return ((double)(countC+countG))/dnaLength;
+    }
+
+    public String mystery(String dna) {
+        int pos = dna.indexOf("T");
+        int count = 0;
+        int startPos = 0;
+        String newDna = "";
+        if (pos == -1) {
+            return dna;
+        }
+        while (count < 3) {
+            count += 1;
+            newDna = newDna + dna.substring(startPos,pos);
+            startPos = pos+1;
+            pos = dna.indexOf("T", startPos);
+            if (pos == -1) {
+                break;
+            }
+        }
+        newDna = newDna + dna.substring(startPos);
+        return newDna;
     }
 
 
     public void testFindAllGenes() {
-        String dna1 = "AATGCTAACTAGCTGACTAAT";
-        printAllGenes(dna1);
-
+        String dna1 = "AATGCTAACTAGCTGAppppATGKAIDOKTAA";
+        StorageResource myGenes = getAllGenes(dna1);
+        for (String s: myGenes.data()){
+            System.out.println(s);
+        }
     }
 
-    public void testFindGene() {
-        String dna1 = "AAATGKLMNCCCTAACCCooTAGATTAATGAAAACCC";
-        System.out.println("Gene is " + findGene(dna1,0));
-        String dna2 = "PPPATGXXXXXXTAAXXXTAGEEERRR";
-        System.out.println("Gene is " + findGene(dna2,0));
-        String dna3 = "CCATGCGCTTAATGATAGATTAA";
-        System.out.println("Gene is " + findGene(dna3,0));
-        String dna4 = "ATGTAAMTGA";
-        System.out.println("Gene is " + findGene(dna4,0));
-    }
 
     public static void main(String args[]) {
         DnaFinder dnaCalc = new DnaFinder();
-        dnaCalc.testFindAllGenes();
-        //dnaCalc.testFindGene();
-        dnaCalc.howMany("A","XAXXAXXXA");
+        FileResource fr = new FileResource("resources/GRch38dnapart.fa");
+        String dna = fr.asString().toUpperCase();
+        int countSuhtarv = 0;
+        int countPikkus = 0;
+        int longestGene = 0;
+
+
+        StorageResource myGenes = dnaCalc.getAllGenes(dna);
+        System.out.println("Total genes: " +myGenes.size());
+        for (String s: myGenes.data()){
+            if (s.length() > 60) { countPikkus = countPikkus +1; }
+            if (dnaCalc.cgRatio(s) > 0.35) { countSuhtarv = countSuhtarv +1; }
+            if(s.length() > longestGene){longestGene = s.length();}
+            //System.out.println("Suhtarv: "+ dnaCalc.cgRatio(s));
+            //System.out.println(s);
+        }
+        System.out.println("Geeni pikkus rohkem kui 60: " + countPikkus);
+        System.out.println("Geeni pikkus suhtarvuga > 0.35: " + countSuhtarv);
+        System.out.println("CTG esinemine kogu DNA ahelas: " + dnaCalc.howMany("CTG",dna));
+        System.out.println("Longest gene length is: " + longestGene);
+        System.out.println(dnaCalc.mystery("AATGCTAACTAGCTGAppppATGKAIDOKTAA"));
     }
 }
