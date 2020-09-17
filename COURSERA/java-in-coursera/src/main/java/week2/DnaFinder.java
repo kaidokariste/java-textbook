@@ -15,9 +15,9 @@ public class DnaFinder {
         return dna.length();
     }
 
-    public String findGene(String dna){
+    public String findGene(String dna, int where){
         // Find the index of the first occurrence of the start codon “ATG”. If there is no “ATG”, return the empty string.
-        int startCodonIndex = dna.indexOf("ATG");
+        int startCodonIndex = dna.indexOf("ATG", where);
         if (startCodonIndex == -1){
             return "";
         }
@@ -34,32 +34,58 @@ public class DnaFinder {
         }
     }
 
+    public void printAllGenes(String dna){
+        int startIndex = 0;
+        while(true){
+            String currentGene = findGene(dna, startIndex);
+            if (currentGene.isEmpty()){
+                break;
+            }
+            System.out.println(currentGene);
+            startIndex = dna.indexOf(currentGene, startIndex) + currentGene.length();
+        }
+    }
 
-    public void testFindStopCodon() {
-        String dna1 = "AAATGKLMNCCCTAACCCooTAGATTAATGAAAACCC";
-        System.out.println("Gene is " + findStopCodon(dna1,0,"CCC"));
-        String dna2 = "CCATGCGCTTAATGATAGATTAA";
-        System.out.println("Gene is " + findStopCodon(dna2,0,"CCC"));
-        String dna3 = "ATGXXXXX";
-        System.out.println("Gene is " + findStopCodon(dna3,0,"CCC"));
-        String dna4 = "ATGXXTAA";
-        System.out.println("Gene is " + findStopCodon(dna4,0,"CCC"));
+    public void howMany(String strA, String strB ){
+        int startIndex = 0;
+        int lenA = strA.length();
+        int counter = 0;
+
+        while(true){
+
+            startIndex = strB.indexOf(strA,startIndex);
+            System.out.println(startIndex);
+            if (startIndex == -1){
+                break;
+            }
+            counter = counter +1;
+            startIndex = startIndex + lenA;
+        }
+        System.out.println(counter);
+    }
+
+
+    public void testFindAllGenes() {
+        String dna1 = "AATGCTAACTAGCTGACTAAT";
+        printAllGenes(dna1);
+
     }
 
     public void testFindGene() {
         String dna1 = "AAATGKLMNCCCTAACCCooTAGATTAATGAAAACCC";
-        System.out.println("Gene is " + findGene(dna1));
+        System.out.println("Gene is " + findGene(dna1,0));
         String dna2 = "PPPATGXXXXXXTAAXXXTAGEEERRR";
-        System.out.println("Gene is " + findGene(dna2));
+        System.out.println("Gene is " + findGene(dna2,0));
         String dna3 = "CCATGCGCTTAATGATAGATTAA";
-        System.out.println("Gene is " + findGene(dna3));
+        System.out.println("Gene is " + findGene(dna3,0));
         String dna4 = "ATGTAAMTGA";
-        System.out.println("Gene is " + findGene(dna4));
+        System.out.println("Gene is " + findGene(dna4,0));
     }
 
     public static void main(String args[]) {
         DnaFinder dnaCalc = new DnaFinder();
-        //dnaCalc.testFindStopCodon();
-        dnaCalc.testFindGene();
+        dnaCalc.testFindAllGenes();
+        //dnaCalc.testFindGene();
+        dnaCalc.howMany("A","XAXXAXXXA");
     }
 }
