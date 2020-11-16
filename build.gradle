@@ -15,4 +15,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'com.googlecode.json-simple:json-simple:1.1.1'
     compile(group: 'org.postgresql', name: 'postgresql', version: '42.2.10')
+   // https://mvnrepository.com/artifact/com.rabbitmq/amqp-client
+    compile group: 'com.rabbitmq', name: 'amqp-client', version: '5.8.0'
 }

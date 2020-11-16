@@ -103,8 +103,8 @@ public class BabyNames {
         //2. What is the number of boys' names in the file yob1905.csv?
         getNumberOfNames("resources/us_babynames_by_year/yob1905.csv");
         //3. What is the rank of the girl’s name “Emily” in 1960?
-        System.out.println("3. What is the rank of the girl’s name “Liis” in 1986?");
-        System.out.println(getRank("resources/us_babynames_by_year/yob1986.csv","Liis","F"));
+        System.out.println("3. What is the rank of the girl’s name “Isabella” in 2002?");
+        System.out.println(getRank("resources/us_babynames_by_year/yob2002.csv","Isabella","F"));
         // 4. What is the rank of the boy’s name “Frank” in 1971?
         //System.out.println("4. What is the rank of the boy’s name “Frank” in 1971?");
         System.out.println(getRank("resources/us_babynames_by_year/yob1985.csv","Kaido","M"));
@@ -123,12 +123,12 @@ public class BabyNames {
         System.out.println(getRank("resources/us_babynames_by_year/yob1974.csv","Kaido","M"));
         //System.out.println(getName("resources/us_babynames_by_year/yob2014.csv",430,"M"));
         //9.In which year from 1880 to 2014 does the girl’s name "Genevieve" have the highest rank (over all the data files)?
-        getNameHighestRank("Liis","F");
+        getNameHighestRank("Isabella","F");
         //10.In which year from 1880 to 2014 does the boy’s name "Mich" have the highest rank (over all the data files)?
         getNameHighestRank("Kaido","M");
         //11. What is the average rank of the girl’s name "Susan" over all the data files?
-        System.out.println("11. Average rank of Liis");
-        getAverageRank("Liis","F");
+        System.out.println("11. Average rank of Isabella");
+        getAverageRank("Isabella","F");
         //12. What is the average rank of the boy's name "Robert" over all the data files?
         System.out.println("12. Average rank of Kaido");
         getAverageRank("Kaido","M");
