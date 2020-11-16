@@ -47,6 +47,13 @@ Proovisin ka saata sõnumit  Fleepi nimelisse rakendusse läbi webhooki. Kuna Gs
 
 *KOKKU: 2h 40 min*
 
+### spring-google-charts
+Põhja ehitasin valmis järgneva õpetuse pealt. **NB** Kui genereerida projekt spring initializeriga ja see laadida Intelij vahendusel, siis ta mõnikord ei saa aru, et tegu on Maven projektiga. Sel juhul pane projket kinni, kustuta .idea kaust ja lae pom.xml uuesti. Aitas. Edasi võtsin google chart lehelt demo koodi. Lisasin charti jaoks eraldi htmli, lisasin chart controlleri. Staatiliselt hakkas kõik tööle, aga kuidas seda dünaamiliseks teha? Õnneks leidus maailmas sama mõttemaailmaga inimesi.  
+[Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)  
+[google-chart-example-with-spring-boot](https://asbnotebook.com/2020/04/18/google-chart-example-with-spring-boot/)
+
+*KOKKU 2h 18min*
+
 #Fantasy premierleague projekt
 api - https://fantasy.premierleague.com/api/bootstrap-static/  
 ideas https://towardsdatascience.com/fantasy-premier-league-value-analysis-python-tutorial-using-the-fpl-api-8031edfe9910  
