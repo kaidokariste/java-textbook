@@ -7,9 +7,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
 import java.util.TreeMap;
+import sandbox.GraphGenerator;
 
 @Controller
 public class GreetingController {
+
+
 
     @GetMapping("/greeting")
     public String greeting(@RequestParam(name = "isik", required = false, defaultValue = "World") String name, Model model) {
@@ -18,12 +21,19 @@ public class GreetingController {
     }
 
     @GetMapping("/chart")
-    public String getPieChart(Model model) {
+    public String getPieChart(Model model) throws InterruptedException {
+
         Map<Integer, Integer> graphData = new TreeMap<>();
-        graphData.put(140, 45);
+        GraphGenerator gr = new GraphGenerator();
+
+        gr.addGraphPoints(graphData);
+
+        /*graphData.put(140, 45);
         graphData.put(141, 22);
         graphData.put(142, 30);
         graphData.put(143, 35);
+        */
+
         model.addAttribute("chartData", graphData);
         return "linechart";
     }
